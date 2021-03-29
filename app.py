@@ -2,7 +2,7 @@ from tkinter import *
 
 def calculate_psi(ideal_psi, ideal_temperature, scale):
     psi_dict = {}
-    for temperature in range(10, 41):
+    for temperature in range(5, 41):
         local_psi = ideal_psi + scale * (ideal_temperature - temperature)
         psi_dict[temperature] = local_psi
     return psi_dict
@@ -50,7 +50,6 @@ def clicked():
     newWindow.title("Final PSI")
     newWindow.geometry("800x600")
     sb_fl = Scrollbar(newWindow)
-    sb_fl.grid(column=0)
     sb_fl.pack(side = RIGHT, fill = Y)
     fl_list = Listbox(newWindow, yscrollcommand=sb_fl.set)
     fl_list.insert(END, "Front left tyre")
@@ -60,7 +59,6 @@ def clicked():
     sb_fl.config(command=fl_list.yview)
 
     sb_fr = Scrollbar(newWindow)
-    sb_fr.grid(column=10)
     sb_fr.pack(side = RIGHT, fill = Y)
     fr_list = Listbox(newWindow, yscrollcommand=sb_fr.set)
     fr_list.insert(END, "Front right tyre")
@@ -70,7 +68,6 @@ def clicked():
     sb_fr.config(command=fr_list.yview)
 
     sb_rl = Scrollbar(newWindow)
-    sb_rl.grid(column=30)
     sb_rl.pack(side = RIGHT, fill = Y)
     rl_list = Listbox(newWindow, yscrollcommand=sb_rl.set)
     rl_list.insert(END, "Rear left tyre")
@@ -80,7 +77,6 @@ def clicked():
     sb_rl.config(command=rl_list.yview)
     
     sb_rr = Scrollbar(newWindow)
-    sb_rr.grid(column=40)
     sb_rr.pack(side = RIGHT, fill = Y)
     rr_list = Listbox(newWindow, yscrollcommand=sb_rr.set)
     rr_list.insert(END, "Rear right tyre")
